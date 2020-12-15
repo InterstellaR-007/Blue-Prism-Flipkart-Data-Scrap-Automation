@@ -1,0 +1,79 @@
+﻿<process name="flipkartprocess1" version="1.0" bpversion="6.9.0.26970" narrative="" byrefcollection="true" preferredid="6ee62408-06c7-4d87-9fe3-2c9251c59c76" published="true">
+  <view>
+    <camerax>0</camerax>
+    <cameray>42</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="5fdb5b95-ad27-4796-b38d-b4072f02f86e" name="Start" type="Start">
+    <display x="15" y="-150" />
+    <onsuccess>de962714-26fc-4870-9ae9-78fa540702af</onsuccess>
+  </stage>
+  <stage stageid="757b4a95-0fe0-4bcc-ac8f-52cdd7b92fca" name="End" type="End">
+    <display x="15" y="165" />
+  </stage>
+  <stage stageid="2fc90a30-6be2-401f-a605-6cd414b32a0d" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="de962714-26fc-4870-9ae9-78fa540702af" name="FlpkartObject::Launch Appl" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-105" />
+    <onsuccess>237c4757-d754-4f3e-a408-e1d377c15b17</onsuccess>
+    <resource object="FlpkartObject" action="Launch Appl" />
+  </stage>
+  <stage stageid="237c4757-d754-4f3e-a408-e1d377c15b17" name="FlpkartObject::search" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" />
+    <onsuccess>78355142-230d-41ef-ae21-792f5cfdf056</onsuccess>
+    <resource object="FlpkartObject" action="search" />
+  </stage>
+  <stage stageid="78355142-230d-41ef-ae21-792f5cfdf056" name="FlpkartObject::Read Data" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <onsuccess>1936ae82-f4c3-4534-a425-555203c4558c</onsuccess>
+    <resource object="FlpkartObject" action="Read Data" />
+  </stage>
+  <stage stageid="1936ae82-f4c3-4534-a425-555203c4558c" name="FlpkartObject::WriteToExcel" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <onsuccess>af2bac41-8c89-4533-9f1a-3042322b1b60</onsuccess>
+    <resource object="FlpkartObject" action="WriteToExcel" />
+  </stage>
+  <stage stageid="af2bac41-8c89-4533-9f1a-3042322b1b60" name="FlpkartObject::InsertDatainDB" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="75" />
+    <onsuccess>f83ed47d-1385-44b6-a798-4765166b5e19</onsuccess>
+    <resource object="FlpkartObject" action="InsertDatainDB" />
+  </stage>
+  <stage stageid="f83ed47d-1385-44b6-a798-4765166b5e19" name="FlpkartObject::Get Color" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <onsuccess>757b4a95-0fe0-4bcc-ac8f-52cdd7b92fca</onsuccess>
+    <resource object="FlpkartObject" action="Get Color" />
+  </stage>
+  <stage stageid="941370d7-1a86-45df-baf6-589da41c0580" name="Recover1" type="Recover">
+    <loginhibit />
+    <display x="165" y="45" />
+    <onsuccess>fa5b7bdf-1e0d-4af3-b360-5a281f0fb4a4</onsuccess>
+  </stage>
+  <stage stageid="75100a95-eaab-453e-9f4e-550b8ba7f1d0" name="Resume1" type="Resume">
+    <loginhibit />
+    <display x="165" y="165" />
+    <onsuccess>757b4a95-0fe0-4bcc-ac8f-52cdd7b92fca</onsuccess>
+  </stage>
+  <stage stageid="fa5b7bdf-1e0d-4af3-b360-5a281f0fb4a4" name="get Exception" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="165" y="105" />
+    <onsuccess>75100a95-eaab-453e-9f4e-550b8ba7f1d0</onsuccess>
+    <calculation expression="ExceptionDetail()" stage="Exception MEssage" />
+  </stage>
+  <stage stageid="566289e3-5bb3-4378-9d53-6a885e70fa77" name="Exception MEssage" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="-180" y="150" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
